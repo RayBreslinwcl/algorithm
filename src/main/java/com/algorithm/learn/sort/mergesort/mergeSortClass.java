@@ -6,6 +6,11 @@ package com.algorithm.learn.sort.mergesort;
 public class mergeSortClass {
 
     /**
+     * 总结：
+     * 1.排序时间：10000个数字排序，array 排序耗时：15ms
+     */
+
+    /**
      * 【3】
      * 0.归并算法：总调用函数
      * 功能：对arr[i], 其中left<=i<=right 范围内的数进行排序
