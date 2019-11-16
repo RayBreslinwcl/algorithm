@@ -11,7 +11,7 @@ public class mergeSortClass {
      */
 
     /**
-     * 【3】
+     * 【4】
      * 0.归并算法：总调用函数
      * 功能：对arr[i], 其中left<=i<=right 范围内的数进行排序
      * @param array
@@ -53,7 +53,7 @@ public class mergeSortClass {
             if (i>mid){
                 array[k]=aux[j-left];
                 j++;
-            }else if(j>right){
+            }else if(j>right+1){
                 array[k]=aux[i-left];
                 i++;
             }else if (aux[i-left]<=aux[j-left]){
