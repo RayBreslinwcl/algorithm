@@ -11,7 +11,7 @@ public class quickSortClass {
      */
 
     /**
-     * 【3】
+     * 【4】
      * 0.快速排序：
      * @param array 数组
      * @param left 起始排序位置
