@@ -32,6 +32,7 @@ public class shellSortClass {
                 //否则，直接跳过，看下一个值
                 if(array[i]-array[i-h]<0){
                     int j=i-h;
+                    //将所有大于array[i]的，都往后移动一个步长
                     for (;j>=0&&array[j]>temp;j-=h){
                         array[j+h]=array[j];
                     }
