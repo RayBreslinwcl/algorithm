@@ -6,7 +6,7 @@ package com.algorithm.learn.sort.bubblesort;
  */
 public class bubbleSortClass {
     /**
-     * 【1】
+     * 【2】<3min
      * 冒泡排序
      * @param array 需要排序的数组
      * @param n 排序截止索引，范围为[0,array.length-1]
