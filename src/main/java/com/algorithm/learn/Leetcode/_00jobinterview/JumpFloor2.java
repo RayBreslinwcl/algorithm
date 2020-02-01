@@ -15,6 +15,16 @@ package com.algorithm.learn.Leetcode._00jobinterview;
  */
 public class JumpFloor2 {
 
+    /**
+     * java中有三种移位运算符：
+     (1)“<<”: 左移运算符，等同于乘2的n次方
+     (2)“>>”: 右移运算符，等同于除2的n次方
+     (3)“>>>”: 无符号右移运算符，不管移动前最高位是0还是1，右移后左侧产生的空位部分都以0来填充。
+        与>>类似。 例： int a = 16; int b = a << 2;//左移2，等同于16 * 2的2次方，也就是16 * 4
+        int c = a >> 2;//右移2，等同于16 / 2的2次方，也就是16 / 4
+     * @param n
+     * @return
+     */
     public int jumpfloor2(int n){
         return 1<< --n;
     }
