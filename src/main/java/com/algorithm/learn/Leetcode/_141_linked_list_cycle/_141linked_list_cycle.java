@@ -58,11 +58,11 @@ public class _141linked_list_cycle {
         ListNode slow=head;
         //快指针
         ListNode fast=head.next;
-        while (slow!=fast){
+        while (slow!=fast){ //如果重合就证明是环形
 //            if(slow==fast){
 //                return true;
 //            }
-            //如果快等于空，则说明不是环形的
+            //如果快等于空或者fast.next等于空，则说明不是环形的
             if(fast==null||fast.next==null){
                 return false;
             }
