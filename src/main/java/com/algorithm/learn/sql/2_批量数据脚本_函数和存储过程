@@ -1,0 +1,143 @@
+批量数据脚本
+
+1. 插入数据
+1.1 建表语句
+CREATE TABLE `dept` (
+ `id` INT(11) NOT NULL AUTO_INCREMENT,
+ `deptName` VARCHAR(30) DEFAULT NULL,
+ `address` VARCHAR(40) DEFAULT NULL,
+ ceo INT NULL ,
+ PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+CREATE TABLE `emp` (
+ `id` INT(11) NOT NULL AUTO_INCREMENT,
+ `empno` INT NOT NULL ,
+ `name` VARCHAR(20) DEFAULT NULL,
+ `age` INT(3) DEFAULT NULL,
+ `deptId` INT(11) DEFAULT NULL,
+ PRIMARY KEY (`id`)
+ #CONSTRAINT `fk_dept_id` FOREIGN KEY (`deptId`) REFERENCES `t_dept` (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+1.2 设置参数
+在执行创建函数之前，首先请保证log_bin_trust_function_creators参数为1，即on开启状态。
+否则会报错：
+
+查询：show variables like 'log_bin_trust_function_creators';
+设置：set global log_bin_trust_function_creators=1;
+	当然，如上设置只存在于当前操作，想要永久生效，需要写入到配置文件中：
+在[mysqld]中加上log_bin_trust_function_creators=1
+
+1.3 编写随机函数
+创建函数，保证每条数据都不同。
+
+1.3.1 随机产生字符串
+DELIMITER $$
+CREATE FUNCTION rand_string(n INT) RETURNS VARCHAR(255)
+BEGIN
+DECLARE chars_str VARCHAR(100) DEFAULT 'abcdefghijklmnopqrstuvwxyzABCDEFJHIJKLMNOPQRSTUVWXYZ';
+ DECLARE return_str VARCHAR(255) DEFAULT '';
+ DECLARE i INT DEFAULT 0;
+ WHILE i < n DO
+ SET return_str =CONCAT(return_str,SUBSTRING(chars_str,FLOOR(1+RAND()*52),1));
+ SET i = i + 1;
+ END WHILE;
+ RETURN return_str;
+END $$
+
+如果要删除函数，则执行：drop function rand_string;
+
+
+1.3.2 随机产生部门编号
+
+#用于随机产生多少到多少的编号
+DELIMITER $$
+CREATE FUNCTION  rand_num (from_num INT ,to_num INT) RETURNS INT(11)
+BEGIN
+ DECLARE i INT DEFAULT 0;
+ SET i = FLOOR(from_num +RAND()*(to_num -from_num+1))   ;
+RETURN i;
+ END$$
+
+如果要删除函数：drop function rand_num;
+
+1.4 创建存储过程
+
+1.4.1 创建往emp表中插入数据的存储过程
+DELIMITER $$
+CREATE PROCEDURE  insert_emp(  START INT ,  max_num INT )
+BEGIN
+DECLARE i INT DEFAULT 0;
+#set autocommit =0 把autocommit设置成0
+ SET autocommit = 0;
+ REPEAT
+ SET i = i + 1;
+ INSERT INTO emp (empno, NAME ,age ,deptid ) VALUES ((START+i) ,rand_string(6)   , rand_num(30,50),rand_num(1,10000));
+ UNTIL i = max_num
+ END REPEAT;
+ COMMIT;
+ END$$
+
+#删除
+# DELIMITER ;
+# drop PROCEDURE insert_emp;
+
+1.4.2 创建往dept表中插入数据的存储过程
+
+#执行存储过程，往dept表添加随机数据
+DELIMITER $$
+CREATE PROCEDURE `insert_dept`(  max_num INT )
+BEGIN
+DECLARE i INT DEFAULT 0;
+ SET autocommit = 0;
+ REPEAT
+ SET i = i + 1;
+ INSERT INTO dept ( deptname,address,ceo ) VALUES (rand_string(8),rand_string(10),rand_num(1,500000));
+ UNTIL i = max_num
+ END REPEAT;
+ COMMIT;
+ END$$
+
+#删除
+# DELIMITER ;
+# drop PROCEDURE insert_dept;
+
+
+1.5 调用存储过程
+
+1.5.1 添加数据到部门表
+#执行存储过程，往dept表添加1万条数据
+DELIMITER ;	#声明;为存储过程的结束符
+CALL insert_dept(10000);
+
+1.5.2 添加数据到员工表
+#执行存储过程，往emp表添加50万条数据
+DELIMITER ;	#声明;为存储过程的结束符
+CALL insert_emp(100000,500000);
+
+1.6 批量删除某个表上的所有索引
+
+1.6.1 删除索引的存储过程
+DELIMITER $$
+CREATE  PROCEDURE `proc_drop_index`(dbname VARCHAR(200),tablename VARCHAR(200))
+BEGIN
+       DECLARE done INT DEFAULT 0;
+       DECLARE ct INT DEFAULT 0;
+       DECLARE _index VARCHAR(200) DEFAULT '';
+       DECLARE _cur CURSOR FOR  SELECT   index_name   FROM information_schema.STATISTICS   WHERE table_schema=dbname AND table_name=tablename AND seq_in_index=1 AND    index_name <>'PRIMARY'  ;
+       DECLARE  CONTINUE HANDLER FOR NOT FOUND set done=2 ;
+        OPEN _cur;
+        FETCH   _cur INTO _index;
+        WHILE  _index<>'' DO
+               SET @str = CONCAT("drop index ",_index," on ",tablename );
+               PREPARE sql_str FROM @str ;
+               EXECUTE  sql_str;
+               DEALLOCATE PREPARE sql_str;
+               SET _index='';
+               FETCH   _cur INTO _index;
+        END WHILE;
+   CLOSE _cur;
+   END$$
+
+1.6.2 执行存储过程
+调用：CALL proc_drop_index("dbname","tablename");
