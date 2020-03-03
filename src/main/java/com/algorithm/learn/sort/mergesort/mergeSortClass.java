@@ -11,7 +11,7 @@ public class mergeSortClass {
      */
 
     /**
-     * 【12】<10min
+     * 【14】<10min
      * 0.归并算法：总调用函数
      * 功能：对arr[i], 其中left<=i<=right 范围内的数进行排序
      * @param array
