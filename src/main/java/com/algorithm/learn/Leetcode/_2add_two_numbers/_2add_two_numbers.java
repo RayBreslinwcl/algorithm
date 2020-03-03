@@ -31,7 +31,7 @@ public class _2add_two_numbers {
      * https://leetcode-cn.com/problems/add-two-numbers/solution/liang-shu-xiang-jia-by-leetcode/
      * 就像你在纸上计算两个数字的和那样，
      * 我们首先从最低有效位也就是列表 l1l1 和 l2l2 的表头开始相加。
-     * 由于每位数字都应当处于 0 \ldots 90…9 的范围内，我们计算两个数字的和时可能会出现 “溢出”。
+     * 由于每位数字都应当处于 0…9 的范围内，我们计算两个数字的和时可能会出现 “溢出”。
      * 例如，5 + 7 = 12.在这种情况下，我们会将当前位的数值设置为 2，并将进位 carry = 1 带入下一次迭代。
      * 进位 carry 必定是 0 或 1，这是因为两个数字相加（考虑到进位）可能出现的最大和为 9 + 9 + 1 = 19
 
