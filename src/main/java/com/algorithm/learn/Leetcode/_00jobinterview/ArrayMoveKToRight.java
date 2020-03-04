@@ -4,7 +4,7 @@ package com.algorithm.learn.Leetcode._00jobinterview;
  * Created by Administrator on 2020/1/31.
  * 数组右移K次, 原数组 [1, 2, 3, 4, 5, 6, 7]
  * 右移3次后结果为 [5,6,7,1,2,3,4]
- *
+ * 【总结：思路是可以倒序】
  */
 public class ArrayMoveKToRight {
     /**

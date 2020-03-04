@@ -8,6 +8,7 @@ package com.algorithm.learn.Leetcode._00jobinterview;
  * b.假定第一次跳的是2阶，那么剩下的是n-2个台阶，跳法是f(n-2)
  * c.由a，b假设可以得出总跳法为: f(n) = f(n-1) + f(n-2)
  * d.然后通过实际的情况可以得出：只有一阶的时候 f(1) = 1 ,只有两阶的时候可以有 f(2) = 2
+ * 【总结：重点思路】
  */
 public class JumpFloor {
     public int jumpfloor(int n){

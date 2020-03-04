@@ -12,6 +12,7 @@ package com.algorithm.learn.Leetcode._00jobinterview;
  * (4)跳n级，剩下0级，则剩下跳法是f(0)
  * 2.所以在n>=2的情况下： f(n)=f(n-1)+f(n-2)+...+f(1)
  * 3.因为f(n-1)=f(n-2)+f(n-3)+...+f(1) 所以f(n)=2*f(n-1) 又f(1)=1,所以可得f(n)=2^(number-1)
+ * 【总结：数学归纳法，很棒！】
  */
 public class JumpFloor2 {
 
