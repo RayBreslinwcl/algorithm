@@ -15,6 +15,7 @@ package com.algorithm.learn.Leetcode._00jobinterview;
  （1）如果是奇数，则从数组下标0的元素开始，把该奇数添加到新数组；
  （2）如果是偶数，则从数组下标为oddCount的元素开始把该偶数添加到新数组中
 
+ 【总结：切割好范围】
 
  */
 public class reorderArrayOddFist {

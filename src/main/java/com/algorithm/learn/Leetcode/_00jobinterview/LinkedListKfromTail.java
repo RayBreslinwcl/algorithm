@@ -20,6 +20,7 @@ import com.algorithm.learn.Leetcode._206reverse_linked_list.reverse_linked_list;
  *              second           |
  *                |             |
  * 1  ->  2  ->  3  ->  4  ->  5
+ * 【总结：双指针】
  */
 public class LinkedListKfromTail {
 

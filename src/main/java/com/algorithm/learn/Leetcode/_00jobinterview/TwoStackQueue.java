@@ -12,6 +12,7 @@ import java.util.Stack;
  * -》第二个栈如果没数据，第一个栈里的数据依次弹出压入第二个栈；
  * -》第二个栈如果有数据，则直接pop出栈顶的数据
  *
+ * 【总结：面试遇到挂掉，难点是两个栈对队列的实现思路】
  */
 public class TwoStackQueue {
 
