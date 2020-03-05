@@ -21,6 +21,7 @@ public class reverse_linked_list {
 
     /**
      * 非递归解法
+     * 【0305：又面试一次，这个算法真的需要重新理解！】
      * @param head
      * @return
      */
@@ -35,6 +36,7 @@ public class reverse_linked_list {
         }
         return pre;
     }
+
     //递归解法：https://leetcode-cn.com/problems/reverse-linked-list/solution/dong-hua-yan-shi-206-fan-zhuan-lian-biao-by-user74/
     /**
      * 递归解法
@@ -55,6 +57,7 @@ public class reverse_linked_list {
      */
     /**
      * 理解：从2个节点链表；3个节点链表；4个节点链表可以理解
+     * 【0305：对返回cur还是需要不断理解】
      * @param head
      * @return
      */
@@ -73,4 +76,7 @@ public class reverse_linked_list {
         //每层递归函数都返回cur，也就是最后一个节点
         return cur;
     }
+
+
+
 }
