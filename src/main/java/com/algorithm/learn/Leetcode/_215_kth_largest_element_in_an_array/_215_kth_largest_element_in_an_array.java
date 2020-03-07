@@ -17,6 +17,7 @@ package com.algorithm.learn.Leetcode._215_kth_largest_element_in_an_array;
 
  你可以假设 k 总是有效的，且 1 ≤ k ≤ 数组的长度。
  【面试亲历20200307：解题方法参考快排】
+ 【参考：github项目：https://github.com/xbox1994/Java-Interview】
 
  */
 public class _215_kth_largest_element_in_an_array {
