@@ -1,0 +1,4 @@
+参考：https://blog.csdn.net/u010886217/article/details/104702038
+
+[root@bigdata redis-3.2.0]# date +"%Y-%m-%d %H-%M-%S" -d "-1 day"
+2020-03-06 08-28-26
