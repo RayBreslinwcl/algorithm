@@ -2,7 +2,8 @@ package com.algorithm.learn.Leetcode._209_minimum_size_subarray_sum;
 
 /**
  * Created by Administrator on 2020/2/8.
- * 给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的连续子数组。如果不存在符合条件的连续子数组，返回 0。
+ * 给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的连续子数组。
+ * 如果不存在符合条件的连续子数组，返回 0。
 
  示例: 
  输入: s = 7, nums = [2,3,1,2,4,3]
@@ -15,6 +16,9 @@ package com.algorithm.learn.Leetcode._209_minimum_size_subarray_sum;
  来源：力扣（LeetCode）
  链接：https://leetcode-cn.com/problems/minimum-size-subarray-sum
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ 【面试重点题目：git重提：】
+ https://github.com/xbox1994/Java-Interview
+
  */
 public class _209_minimum_size_subarray_sum {
     /**
@@ -22,7 +26,8 @@ public class _209_minimum_size_subarray_sum {
 
      用双指针 left 和 right 表示一个窗口。
      1.right 向右移增大窗口，直到窗口内的数字和大于等于了 s。进行第 2 步。
-     2.记录此时的长度，left 向右移动，开始减少长度，每减少一次，就更新最小长度。直到当前窗口内的数字和小于了 s，回到第 1 步。
+     2.记录此时的长度，left 向右移动，开始减少长度，每减少一次，就更新最小长度。
+        直到当前窗口内的数字和小于了 s，回到第 1 步。
 
      举个例子，模拟下滑动窗口的过程吧。
      作者：windliang
