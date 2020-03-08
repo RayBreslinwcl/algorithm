@@ -43,7 +43,7 @@ public class _226_invert_binary_tree {
 
     /**
      * 1.递归解法
-     *
+     * 【练习：2】
      * @param root
      * @return
      */
@@ -84,4 +84,5 @@ public class _226_invert_binary_tree {
         }
         return root;
     }
+
 }
