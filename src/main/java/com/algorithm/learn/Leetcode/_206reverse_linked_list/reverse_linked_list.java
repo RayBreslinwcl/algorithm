@@ -22,6 +22,7 @@ public class reverse_linked_list {
     /**
      * 非递归解法
      * 【0305：又面试一次，这个算法真的需要重新理解！】
+     * 【0309：写错了，返回cur节点，当然错误】
      * @param head
      * @return
      */
