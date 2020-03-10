@@ -25,7 +25,7 @@ public class merge_two_sorted_lists {
     }
 
     /**
-     * 思路：
+     * 思路：【复习2】
      * l1和l2两个链表
      * 1.新建一个链表头prehead，并再创建一个辅助头head指向prehead。后续移动只是移动head
      * 2.比较l1和l2，把head指向比较小的那一个，同时head也进行后移

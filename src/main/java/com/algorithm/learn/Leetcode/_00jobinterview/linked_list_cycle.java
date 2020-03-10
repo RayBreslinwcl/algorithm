@@ -69,7 +69,7 @@ public class linked_list_cycle {
             }
             //分别后移动
             slow=slow.next;
-            fast=fast.next;
+            fast=fast.next.next;
         }
         return true;
     }
