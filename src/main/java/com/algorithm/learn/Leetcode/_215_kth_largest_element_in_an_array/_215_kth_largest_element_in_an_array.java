@@ -23,6 +23,7 @@ package com.algorithm.learn.Leetcode._215_kth_largest_element_in_an_array;
 public class _215_kth_largest_element_in_an_array {
     /**
      *  【解决参考：】
+     *  【手写：2】
      https://leetcode-cn.com/problems/kth-largest-element-in-an-array/solution/java-jie-zhu-partitionfen-qu-jian-zhi-on-by-yankua/
      * @param nums
      * @param k
@@ -30,6 +31,7 @@ public class _215_kth_largest_element_in_an_array {
      */
     public int findKthLargest(int[] nums, int k) {
         int len=nums.length;
+        //注意转换语义：从逆序K大，转换为顺序len-K
         int targetIndex=len-k;//可以依据包含3个元素的数组去理解
         int low=0,high=len-1;
         while(true){
@@ -37,9 +39,9 @@ public class _215_kth_largest_element_in_an_array {
             if(i==targetIndex){
                 return nums[i];
             }else if(i<targetIndex){
-                low=i+1;
+                low=i+1;  //+1：可以减少1个
             }else{
-                high=i-1;
+                high=i-1; //-1：可以减少1个
             }
         }
 
