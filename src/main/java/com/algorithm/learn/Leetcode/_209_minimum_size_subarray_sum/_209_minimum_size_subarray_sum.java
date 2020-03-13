@@ -16,7 +16,7 @@ package com.algorithm.learn.Leetcode._209_minimum_size_subarray_sum;
  来源：力扣（LeetCode）
  链接：https://leetcode-cn.com/problems/minimum-size-subarray-sum
  著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- 【面试重点题目：git重提：】
+ 【面试重点题目：git重提：3】
  https://github.com/xbox1994/Java-Interview
 
  */
@@ -47,7 +47,7 @@ public class _209_minimum_size_subarray_sum {
         int right=0;
         int sum=0;
         int min=Integer.MAX_VALUE;
-        while (right<n){
+        while (right<n){  //right<n，判断条件
             sum=sum+nums[right];
             right++;
             while (sum>=s){
