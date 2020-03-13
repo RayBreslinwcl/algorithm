@@ -49,7 +49,7 @@ public class _209_minimum_size_subarray_sum {
         int min=Integer.MAX_VALUE;
         while (right<n){  //right<n，判断条件
             sum=sum+nums[right];
-            right++;
+            right++;  //因为right++，所以，right-left即为窗口内部的元素数量
             while (sum>=s){
                 min= Math.min(min,right-left);
                 sum-=nums[left];
