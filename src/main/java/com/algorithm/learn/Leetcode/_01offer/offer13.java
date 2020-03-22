@@ -39,4 +39,45 @@ public class offer13 {
         }
 
     }
+
+
+    /**
+     * 类似插入排序:
+     * 步骤:
+     * 1.L从左向右遍历，找到第一个偶数；
+     * 2.每次R从L+1开始向后找，直到找到第一个奇数；
+     * 3.将[L,...,R-1]的元素整体后移一位，最后将找到的奇数放入L位置，然后L++；
+     * 4.如果没有找到那样的arr[R]是奇数，那说明右边没有奇数了，可以break了；
+     *
+     * @param array
+     */
+    public void reOrderArray2(int [] array) {
+
+        int L=0,R;
+        while (L< array.length){
+            while (L<array.length && (array[L]%2==1)){// 先找到第一个偶数
+                L++;
+            }
+            R=L+1;
+            while (R<array.length &&(array[R]%2==0)){// 再在L 的后面开始找到第一个奇数
+                R++;
+            }
+
+            // 注意此时arr[L]是偶数　　arr[R]是奇数　-->将 [L,..R-1]中的数　向后移动一个位置
+            if(R<array.length){
+                int t=array[R];
+                for(int i=R-1;i>=L;i--){
+                    array[i+1]=array[i];
+                }
+                array[L]=t;
+                L++;
+            }else {
+                break;
+            }
+
+        }
+
+
+
+    }
 }
