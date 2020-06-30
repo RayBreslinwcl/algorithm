@@ -13,7 +13,7 @@ public class  offer01 {
 
     /**
      * 错误：[[1,2,8,9],[2,4,9,12],[4,7,10,13],[6,8,11,15]]查找7，返回false。因为手残，等号导致
-     * 【update2】
+     * 【update3-理解算法】
      * @param target
      * @param array
      * @return
