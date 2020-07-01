@@ -8,7 +8,7 @@ package com.algorithm.learn.Leetcode._01offer;
  * #### 题目
  *
  * > 用两个栈来实现一个队列，完成队列的`Push`和`Pop`操作。 队列中的元素为`int`类型。
- * 【总结：已经做过】
+ * 【总结：已经做过update】
  */
 public class offer05 {
 }
