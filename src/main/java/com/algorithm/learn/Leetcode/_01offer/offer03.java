@@ -34,9 +34,11 @@ public class offer03 {
     }
 
     public void  res(ListNode listNode){
+        //1.先写递归
         if(listNode==null){
             return;
         }
+        //2.先递归，再打印
         res(listNode.next);
         reslist.add(listNode.val);
     }
