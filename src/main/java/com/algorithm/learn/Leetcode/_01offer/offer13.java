@@ -19,7 +19,7 @@ public class offer13 {
     /**
      * 类似冒泡排序解法
      * 冒泡排序是交换前面的一个数比后面的一个数大的情况，而这个题目是交换前面是偶数而后面是奇数的情况。
-     * 【验证！】
+     * 【验证！非常妙！】
      * @param array
      */
     public void reOrderArray(int [] array) {
@@ -48,7 +48,7 @@ public class offer13 {
      * 2.每次R从L+1开始向后找，直到找到第一个奇数；
      * 3.将[L,...,R-1]的元素整体后移一位，最后将找到的奇数放入L位置，然后L++；
      * 4.如果没有找到那样的arr[R]是奇数，那说明右边没有奇数了，可以break了；
-     *
+     * 【思路非常好，就是自己需要练习！】
      * @param array
      */
     public void reOrderArray2(int [] array) {
@@ -63,7 +63,7 @@ public class offer13 {
                 R++;
             }
 
-            // 注意此时arr[L]是偶数　　arr[R]是奇数　-->将 [L,..R-1]中的数　向后移动一个位置
+            // 注意此时arr[L]是偶数，arr[R]是奇数　-->将[L,..R-1]中的数向后移动一个位置
             if(R<array.length){
                 int t=array[R];
                 for(int i=R-1;i>=L;i--){
