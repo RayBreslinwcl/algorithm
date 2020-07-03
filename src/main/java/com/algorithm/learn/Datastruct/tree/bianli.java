@@ -1,6 +1,12 @@
 package com.algorithm.learn.Datastruct.tree;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class bianli {
+    /**
+     * 树结构
+     */
     public class TreeNode {
         int val;
         TreeNode left;
@@ -41,5 +47,31 @@ public class bianli {
         houxu(t.right);
         System.out.print(t.val + " "); // 访问玩左右访问当前节点
 
+    }
+
+    //2020/7/3 参考：https://www.cnblogs.com/bigsai/p/11393609.html
+    /**
+     * 1.层序遍历
+     * @param t
+     */
+    public void cengxu(TreeNode t) {//层序遍历
+        Queue<TreeNode> q1 = new ArrayDeque<TreeNode>();
+        if (t == null){
+            return;
+        }
+        if (t != null) {
+            q1.add(t);
+        }
+        while (!q1.isEmpty()) {
+            TreeNode t1 = q1.poll();
+            if (t1.left != null){
+                q1.add(t1.left);
+            }
+            if (t1.right != null){
+                q1.add(t1.right);
+            }
+            System.out.print(t1.val + " ");
+        }
+        System.out.println();
     }
 }
