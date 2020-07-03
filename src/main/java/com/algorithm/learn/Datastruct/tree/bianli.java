@@ -2,6 +2,7 @@ package com.algorithm.learn.Datastruct.tree;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.Stack;
 
 public class bianli {
     /**
@@ -17,37 +18,69 @@ public class bianli {
         }
     }
 
-    public void qianxu(TreeNode t)// 前序递归 前序遍历：根结点 ---> 左子树 ---> 右子树
-    {
-        if (t == null) {
+    // 前序遍历以node为根的二分搜索树, 递归算法
+    // 前序递归 前序遍历：根结点 ---> 左子树 ---> 右子树
+    private void preOrder(TreeNode node){
+        if(node==null){
             return;
         }
-        System.out.print(t.val + " ");// 当前节点
-        qianxu(t.left);
-        qianxu(t.right);
+
+        System.out.println(node.val);
+        preOrder(node.left);
+        preOrder(node.right);
     }
 
-    public void zhongxu(TreeNode t)// 中序遍历 中序遍历：左子树---> 根结点 ---> 右子树
-    {
-        if (t == null) {
+
+    /**
+     * 3.3 非递归前序遍历
+     */
+    public void preOrderNR(TreeNode root){
+        if (root==null){
             return;
         }
-        zhongxu(t.left);
-        System.out.print(t.val + " ");// 访问完左节点访问当前节点
-        zhongxu(t.right);
 
+        Stack<TreeNode> stack=new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()){
+            TreeNode cur=stack.pop();
+            System.out.println(cur.val);
+
+            if(cur.right!=null){
+                stack.push(cur.right);
+            }
+            if(cur.left!=null){
+                stack.push(cur.left);
+            }
+        }
     }
 
-    public void houxu(TreeNode t)// 后序遍历 后序遍历：左子树 ---> 右子树 ---> 根结点
-    {
-        if (t == null) {
+
+
+    // 中序遍历以node为根的二分搜索树, 递归算法
+    private void inOrder(TreeNode node){
+        if(node==null){
             return;
         }
-        houxu(t.left);
-        houxu(t.right);
-        System.out.print(t.val + " "); // 访问玩左右访问当前节点
 
+        inOrder(node.left);
+        System.out.println(node.val);
+        inOrder(node.right);
     }
+
+    /**
+     * 后续遍历
+     * @param node
+     */
+    private void postOrder(TreeNode node){
+        if(node==null){
+            return;
+        }
+
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.val);
+    }
+
 
     //2020/7/3 参考：https://www.cnblogs.com/bigsai/p/11393609.html
     /**
