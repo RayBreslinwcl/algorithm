@@ -14,8 +14,9 @@ public class offer12 {
     /**
      * 参考解法：https://www.nowcoder.com/questionTerminal/1a834e5e3e1a4b7ba251417554e07c00?f=discussion
      *  FantasyLin的解法
+     *
+     *  【update：这个解法妙】
      */
-
     public double Power(double base, int exponent) {
         return powerSelf(base,exponent);
     }
@@ -25,9 +26,12 @@ public class offer12 {
         double result=0.0;
 
         //结束条件
-        if(n==0) return 1.0;
-        if(n==1) return base;
-
+        if(n==0) {
+            return 1.0;
+        }
+        if(n==1){
+            return base;
+        }
 
         result=powerSelf(base,n/2);
         result=result*result;
@@ -43,7 +47,6 @@ public class offer12 {
         }else if(exponent<0){
             //负数
             result=1/result;
-
         }
 
         return result;
