@@ -54,7 +54,7 @@ public class bianli {
         }
     }
 
-    // 中序遍历以 node为根的二分搜索树, 递归算法
+    // 中序遍历以node为根的二分搜索树, 递归算法
     private void inOrder(TreeNode node){
         if(node==null){
             return;
