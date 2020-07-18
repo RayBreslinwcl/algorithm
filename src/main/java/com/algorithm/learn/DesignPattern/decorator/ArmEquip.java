@@ -2,7 +2,7 @@ package com.algorithm.learn.DesignPattern.decorator;
 
 /**
  * 武器
- * 攻击力20
+ * 攻击力20+
  * @author zhy
  *
  */
