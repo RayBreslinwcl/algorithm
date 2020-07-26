@@ -11,7 +11,8 @@ public class quickSortClass {
      */
 
     /**
-     * 【16】<3min
+     * 【16】<3min+面试真的关键是：等号
+     * 通用最快的测试数据集：3，9，10，6，这个数据集测试，调试也容易暴露出现问题！
      * 0.快速排序：
      * @param array 数组
      * @param left 起始排序位置
