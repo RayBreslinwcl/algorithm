@@ -82,7 +82,7 @@ public class bianli {
 
     //2020/7/3 参考：https://www.cnblogs.com/bigsai/p/11393609.html
     /**
-     * 1.层序遍历
+     * 1.层序遍历【重复学习】
      * @param t
      */
     public void cengxu(TreeNode t) {//层序遍历
