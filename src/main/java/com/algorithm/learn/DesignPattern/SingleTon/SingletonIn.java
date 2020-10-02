@@ -23,6 +23,9 @@ public class SingletonIn {
      */
 
     private SingletonIn() {
+        if(SingletonInHodler.singletonIn != null){
+            throw new RuntimeException("单例构造器禁止反射调用");
+        }
     }
 
     private static class SingletonInHodler {
