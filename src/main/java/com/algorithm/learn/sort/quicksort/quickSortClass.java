@@ -11,7 +11,8 @@ public class quickSortClass {
      */
 
     /**
-     * 【16】<3min+面试真的关键是：等号
+     * 【18】<3min+面试真的关键是：等号
+     * update：2020/10/10
      * 通用最快的测试数据集：3，9，10，6，这个数据集测试，调试也容易暴露出现问题！
      * 0.快速排序：
      * @param array 数组
@@ -42,7 +43,7 @@ public class quickSortClass {
         int v=array[left]; //作为标准的元素，左侧第一个
 
         for (i=left+1;i<=right;i++){
-            if (array[i]>v){
+            if (array[i]>=v){
 //                i++;不需要操作，因为i默认加1
             }else if(array[i]<v){
                 int temp=array[i];
