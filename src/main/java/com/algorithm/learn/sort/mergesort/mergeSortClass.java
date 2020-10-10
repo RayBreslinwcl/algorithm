@@ -13,6 +13,7 @@ public class mergeSortClass {
     /**
      * 【14】<10min
      * 0.归并算法：总调用函数
+     * 1.update：(aux[i-left]<=aux[j-left])等号很关键。2020/10/10
      * 功能：对arr[i], 其中left<=i<=right 范围内的数进行排序
      * @param array
      * @param left
@@ -56,7 +57,7 @@ public class mergeSortClass {
             }else if(j>right){
                 array[k]=aux[i-left];
                 i++;
-            }else if (aux[i-left]<=aux[j-left]){
+            }else if (aux[i-left]<=aux[j-left]){  //这个等号很关键，否则导致有时失效
                 array[k]=aux[i-left];
                 i++;
             }else if(aux[j-left]<aux[i-left]){
