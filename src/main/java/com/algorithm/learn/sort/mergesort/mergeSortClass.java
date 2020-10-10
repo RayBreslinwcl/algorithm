@@ -94,5 +94,28 @@ public class mergeSortClass {
             System.out.print(i+"\t");
         }
 
+
+
+
+        System.out.println("==========================");
+
+        int[] arr2=new int[]{9,2,7,8,2,0,9};
+        System.out.println("array 排序前数组：");
+        for (int i : arr2) {
+            System.out.print(i+"\t");
+        }
+
+        System.out.println();
+
+        long startTime2=System.currentTimeMillis();
+        mergeSort(arr2,0,arr2.length-1); //归并排序
+        long stopTime2=System.currentTimeMillis();
+        System.out.println("array 排序耗时："+(stopTime2-startTime2)+"ms");
+
+        System.out.println("array 排序后数组：");
+        for (int i : arr2) {
+            System.out.print(i+"\t");
+        }
+
     }
 }
