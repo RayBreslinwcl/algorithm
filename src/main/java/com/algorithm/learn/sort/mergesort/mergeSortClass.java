@@ -11,7 +11,7 @@ public class mergeSortClass {
      */
 
     /**
-     * 【14】<10min
+     * 【17】<10min
      * 0.归并算法：总调用函数
      * 1.update：(aux[i-left]<=aux[j-left])等号很关键。2020/10/10
      * 功能：对arr[i], 其中left<=i<=right 范围内的数进行排序
@@ -96,8 +96,7 @@ public class mergeSortClass {
         }
 
 
-
-
+        System.out.println();
         System.out.println("==========================");
 
         int[] arr2=new int[]{9,2,7,8,2,0,9};
