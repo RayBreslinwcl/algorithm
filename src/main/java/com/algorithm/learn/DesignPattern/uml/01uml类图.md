@@ -7,7 +7,6 @@
 ## 从一个示例开始
 
 请看以下这个类图，类之间的关系是我们需要关注的：
-
 ![_images/uml_class_struct.jpg](https://design-patterns.readthedocs.io/zh_CN/latest/_images/uml_class_struct.jpg)
 
 - 车的类图结构为<<abstract>>，表示车是一个抽象类；
