@@ -52,7 +52,6 @@ public class reorderArrayOddFist {
                 aux[oddCount++]=array[i];
             }
         }
-
         //赋给原数组
         for (int i=0;i<array.length;i++){
             array[i]=aux[i];
