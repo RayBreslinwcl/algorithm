@@ -73,17 +73,17 @@ public class tree_01_pre_mid_last_around {
      * 参考：https://blog.csdn.net/qq_43434328/article/details/113356807
      * @param root
      */
-    public List<Integer> midOrder2(TreeNode root) {//根左右
+    public List<Integer> midOrder(TreeNode root) {//左根右
         List<Integer> list = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         TreeNode node = root;
-        while (!stack.empty()||node!=null){//栈不为空且当前结点不为空继续遍历
-            while (node!=null){//遍历左儿子 边遍历边添加结果
+        while (!stack.empty()||node!=null) {//栈不为空且当前结点不为空继续遍历
+            while (node!=null){//遍历左儿子 找到最左儿子
                 stack.push(node);
-                list.add(node.val);
                 node = node.left;
             }
             node = stack.pop();//返回当前节点的父节点
+            list.add(node.val);
             node = node.right;
         }
         return list;
