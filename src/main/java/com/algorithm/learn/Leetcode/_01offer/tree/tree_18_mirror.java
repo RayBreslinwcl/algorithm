@@ -23,7 +23,7 @@ package com.algorithm.learn.Leetcode._01offer.tree;
  *     	 / \  / \
  *     	11 9 7  5
  */
-public class tree_02_mirror {
+public class tree_18_mirror {
 
 
     public class TreeNode {
