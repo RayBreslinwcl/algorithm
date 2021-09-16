@@ -33,4 +33,31 @@ public class tree_62_bin_search_k {
         }
         helper(node.right, k);
     }
+
+    public static void main(String[] args) {
+
+        /**
+         *  实例1：
+         *       1
+         *      / \
+         *     2   3
+         *    /   / \
+         *   4   5   6
+         *   序列化为
+         *   "1,2,4,#,#,#,3,5,#,#,6,#,#"
+         *
+         * 当前采用：下面的
+         *        5
+         *      /  \
+         *     3    7
+         *    / \   / \
+         *   2  4  6   8
+         *   序列化为
+         *   "5,3,2,#,#,4,#,#,7,6,#,#,8,#,#"
+         */
+        String serialString="5,3,2,#,#,4,#,#,7,6,#,#,8,#,#";
+        TreeNode deserializeTree = new tree_61_serial_deserial().Deserialize(serialString);
+        TreeNode treeNodeRes = new tree_62_bin_search_k().KthNode(deserializeTree, 4);
+        System.out.println(treeNodeRes.val);
+    }
 }
