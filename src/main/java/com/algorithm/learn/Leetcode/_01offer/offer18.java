@@ -5,8 +5,7 @@ package com.algorithm.learn.Leetcode._01offer;
  *
  * 题目链接
  *
- * https://www.nowcoder.com/practice/564f4c26aa584921bc75623e48ca3011?tpId=13&tqId=11171&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking
- *
+ * https://www.nowcoder.com/practice/a9d0ecbacef9410ca97463e4a5c83be7?tpId=265&&tqId=39229&rp=1&ru=/ta/coding-interviews-all&qru=/ta/coding-interviews-all/question-ranking
  * 题目描述
  * 操作给定的二叉树，将其变换为源二叉树的镜像。
  * 输入描述:
@@ -38,6 +37,7 @@ public class offer18 {
 
     }
 
+
     /**
      * 思路解析
      *
@@ -61,5 +61,24 @@ public class offer18 {
         //迭代
         Mirror(root.left);
         Mirror(root.right);
+    }
+
+    /**
+     * 更新：一次通过，20211201
+     * https://www.nowcoder.com/practice/a9d0ecbacef9410ca97463e4a5c83be7?tpId=265&&tqId=39229&rp=1&ru=/ta/coding-interviews-all&qru=/ta/coding-interviews-all/question-ranking
+     *
+     * @param pRoot
+     * @return
+     */
+    private TreeNode Mirror2 (TreeNode pRoot) {
+        if (pRoot==null) return null;
+        TreeNode left=pRoot.left;
+        TreeNode right=pRoot.right;
+        pRoot.left=right;
+        pRoot.right=left;
+
+        Mirror2(pRoot.left);
+        Mirror2(pRoot.right);
+        return pRoot;
     }
 }
