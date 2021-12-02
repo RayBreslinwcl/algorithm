@@ -2,13 +2,7 @@
 
 # 一、优先队列概述
 
- 　　优先队列PriorityQueue是Queue接口的实现，可以对其中元素进行排序，
-
-可以放基本数据类型的包装类（如：Integer，Long等）或自定义的类
-
-对于基本数据类型的包装器类，优先队列中元素默认排列顺序是升序排列
-
-但对于自己定义的类来说，需要自己定义比较器
+ 　　优先队列PriorityQueue是Queue接口的实现，可以对其中元素进行排序，可以放基本数据类型的包装类（如：Integer，Long等）或自定义的类对于基本数据类型的包装器类，优先队列中元素默认排列顺序是升序排列但对于自己定义的类来说，需要自己定义比较器。
 
 # 二、常用方法
 
@@ -61,13 +55,13 @@ public static void main(String[] args) {
 }
 ```
 
-[![复制代码](https://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
+
 
  
 
 ## 2.队列保存的是自定义类
 
-[![复制代码](https://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
+
 
 ```
 //矩形类
