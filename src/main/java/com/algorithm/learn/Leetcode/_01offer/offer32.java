@@ -56,4 +56,20 @@ public class offer32 {
         return res.toString();
     }
 
+    public static void main(String[] args) {
+        int[] numbers=new int[]{1,4,2,42};
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < numbers.length; i++){
+            list.add(numbers[i] + "");
+        }
+        Collections.sort(list, (o1, o2) -> {
+            return (o1 + o2).compareTo(o2 + o1);  //按照降序排列(第一个大于第二个返回1-->升序排列)
+        });
+        //Collections.sort:记住关键，默认升序的就好。
+        for (String s : list) {
+            System.out.println(s);
+        }
+
+    }
+
 }
