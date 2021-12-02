@@ -55,7 +55,7 @@ public static void main(String[] args) {
 }
 ```
 
-
+记住优先队列默认升序，即最小堆。
 
  
 
