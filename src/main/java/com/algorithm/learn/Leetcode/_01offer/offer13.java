@@ -17,29 +17,26 @@ package com.algorithm.learn.Leetcode._01offer;
 public class offer13 {
 
     /**
-     * 类似冒泡排序解法
-     * 冒泡排序是交换前面的一个数比后面的一个数大的情况，而这个题目是交换前面是偶数而后面是奇数的情况。
-     * 【验证！非常妙！】
+     * 更新解答，更加直接
+     * https://www.nowcoder.com/practice/beb5aa231adc45b2a5dcc5b62c93f593?tpId=13&tqId=11166&tPage=1&rp=1&ru=%2Fta%2Fcoding-interviews&qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking
      * @param array
      */
     public void reOrderArray(int [] array) {
-
-
-        for (int end=array.length-1;end>0;end--){
-            //n-1次冒泡
-            //相邻两个，如果前面是偶数，后面是奇数，则转换一下
-            for (int i=0;i<end;i++){
-                if((array[i]%2==0)&&(array[i+1]%2==1)){
-                    //偶数放到后面
-                    int temp=array[i];
-                    array[i]=array[i+1];
-                    array[i+1]=temp;
+        int cursor=0;
+        for(int i=0;i<array.length;i++){
+            int item=array[i];
+            if((item&1)==1){
+                if(i!=0){
+                    int temp=0;
+                    for(int j=i;j>cursor;j--){
+                        array[j]=array[j-1];
+                    }
+                    array[cursor]=item;
                 }
+                cursor++;
             }
         }
-
     }
-
 
     /**
      * 类似插入排序:
