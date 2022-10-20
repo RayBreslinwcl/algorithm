@@ -1,4 +1,4 @@
-package com.algorithm.learn.Leetcode._01offer;
+package com.algorithm.learn.recuresion;
 
 /**
  * 15 - 反转链表
@@ -11,7 +11,7 @@ package com.algorithm.learn.Leetcode._01offer;
  *
  * > 输入一个链表，反转链表后，输出新链表的表头。
  */
-public class offer15 {
+public class reverseSingleList {
 
     public class ListNode {
         int val;
