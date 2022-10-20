@@ -11,7 +11,7 @@ package com.algorithm.learn.recuresion;
  *
  * > 输入一个链表，反转链表后，输出新链表的表头。
  */
-public class reverseSingleList {
+public class _1reverseSingleList {
 
     public class ListNode {
         int val;
