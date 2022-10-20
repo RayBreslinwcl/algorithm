@@ -12,22 +12,22 @@ package com.algorithm.learn.recuresion;
  */
 public class _3unique_paths {
     public static void main(String[] args) {
-        System.out.println(uniquePaths(3,7));
+//        System.out.println(uniquePaths(3,7));
     }
 
-    /**
-     * 这个暴力解法：不推荐！关键超出时间，是不符合要求的
-     * @param m
-     * @param n
-     * @return
-     */
-    public static int uniquePaths(int m, int n) {
-        if(m==1||n==1) return 1;
-
-        int res=uniquePaths(m-1,n)+uniquePaths(m,n-1);
-
-        return res;
-    }
+//    /**
+//     * 这个暴力解法：不推荐！关键超出时间，是不符合要求的
+//     * @param m
+//     * @param n
+//     * @return
+//     */
+//    public static int uniquePaths(int m, int n) {
+//        if(m==1||n==1) return 1;
+//
+//        int res=uniquePaths(m-1,n)+uniquePaths(m,n-1);
+//
+//        return res;
+//    }
 
 
     /**
