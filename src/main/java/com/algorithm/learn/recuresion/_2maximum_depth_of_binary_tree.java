@@ -20,6 +20,7 @@ package com.algorithm.learn.recuresion;
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/maximum-depth-of-binary-tree
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+ * 【update：2----20221020重新做了一遍！】
  */
 public class _2maximum_depth_of_binary_tree {
 
