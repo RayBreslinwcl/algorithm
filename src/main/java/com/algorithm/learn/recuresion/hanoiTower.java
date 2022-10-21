@@ -30,9 +30,9 @@ public class hanoiTower {
     /**
      * 递归实现汉诺塔的函数
      * @param n
-     * @param A
-     * @param B
-     * @param C
+     * @param A 源
+     * @param B 辅助
+     * @param C 目的
      */
     public static void hanoi(int n,char A,char B ,char C){
         if(n==1){
@@ -55,7 +55,8 @@ public class hanoiTower {
         System.out.println("这是汉诺塔问题（把A塔上编号从小号到大号的圆盘从A塔通过B辅助塔移动到C塔上去");
         System.out.println("******************************************************************************************");
         System.out.print("请输入圆盘的个数：");
-        int disks=sc.nextInt();
+//        int disks=sc.nextInt();
+        int disks=2;
         hanoiTower.hanoi(disks,A,B,C);
         sc.close();
     }
