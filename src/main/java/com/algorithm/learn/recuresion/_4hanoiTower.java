@@ -11,7 +11,7 @@ import java.util.Scanner;
  * 参考：https://dmego.me/2016/10/16/hanoi
  *
  */
-public class hanoiTower {
+public class _4hanoiTower {
     /**
      * 移动次数
      */
@@ -37,11 +37,11 @@ public class hanoiTower {
     public static void hanoi(int n,char A,char B ,char C){
         if(n==1){
             //圆盘只有一个时，只需将其从A塔移到C塔
-            hanoiTower.move(1,A,C);
+            _4hanoiTower.move(1,A,C);
         }else{
             //否则
             hanoi(n-1,A,C,B);//递归，把A塔上编号1~n-1的圆盘移到B上，以C为辅助塔
-            hanoiTower.move(n,A,C);//把A塔上编号为n的圆盘移到C上
+            _4hanoiTower.move(n,A,C);//把A塔上编号为n的圆盘移到C上
             hanoi(n-1,B,A,C);//递归，把B塔上编号1~n-1的圆盘移到C上，以A为辅助塔
         }
     }
@@ -57,7 +57,7 @@ public class hanoiTower {
         System.out.print("请输入圆盘的个数：");
 //        int disks=sc.nextInt();
         int disks=2;
-        hanoiTower.hanoi(disks,A,B,C);
+        _4hanoiTower.hanoi(disks,A,B,C);
         sc.close();
     }
 }
